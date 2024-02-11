@@ -1,15 +1,64 @@
 {% load static %}
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <style>
+        body {
+            background-image: url("{% static 'background.gif' %}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Add your additional styles here */
+        /* For example, you may want to style the form */
+        form {
+            center;
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;                       
+            margin-top: 10px;
+        }
+        h2 {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;                       
+            margin-top: 50px;
+        }
+        #formdiv {
+            max-width: 440px;
+            margin: auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            text-align: left; /* Center-align the content */
+        }
+
+    </style>
+</head>
+<body>
+
 {% block content %}
-<h2>Enter Azure Blob Storage Details</h2>
+<div id="formdiv">
+<h2><center>Enter Azure Blob Storage Details<center></h2>
 <form method="post" action="{% url 'read_pdfs' %}" onsubmit="showLoader()">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Generate Excel</button>
 </form>
-<div id="loader" style="display: none;">
-    <img src="{% static 'loader.gif' %}" alt="Loading..."></img>
-    <p>Loading...</p>
+</div>
+
+<div id="loader" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <img src="{% static 'loading.gif' %}" width="100" height="100" alt="Loading...">
 </div>
 
 <script>
@@ -17,4 +66,8 @@
         document.getElementById('loader').style.display = 'block';
     }
 </script>
+
 {% endblock %}
+
+</body>
+</html>

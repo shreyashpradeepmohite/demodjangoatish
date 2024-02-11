@@ -13,7 +13,7 @@ from datetime import datetime
 import json
 
 # Load configuration from the JSON file
-with open('D:\shreyash\pythonprojects\GitDjangoAtish\demodjangoatish\demoapp\config.json', 'r') as json_file:
+with open('.\demoapp\config.json', 'r') as json_file:
     config = json.load(json_file)
 
 columns = config["columns"]
@@ -90,8 +90,7 @@ def read_pdfs(request):
                 return_message = Generate_excel(container_name,directory_name,EXCEL_FILE_NAME,excel_bytes)
                 print(excel_link)
                 return render(request, 'demoapp/pdf_list.html', {'pdf_files': pdf_files,'return_message': return_message,'excel_link':excel_link})
-            except Exception as e:
-                print(e)
+            except Exception as e:                
                 return render(request, 'demoapp/error.html', {'error_message': e})
     else:
         form = UserInputForm()
@@ -148,7 +147,7 @@ def Generate_excel(CONTAINER_NAME,DIRECTORY_NAME,EXCEL_FILE_NAME,excel_bytes):
         blob_client.upload_blob(excel_bytes.getvalue(), overwrite=True)
         excel_link=blob_client.url
 
-        message=f"Excel file uploaded to {CONTAINER_NAME}/{DIRECTORY_NAME}/{EXCEL_FILE_NAME}"
+        message=f"Excel file uploaded Sucessfully"
         
     except Exception as e:
         message=f"failed to upload excel"
