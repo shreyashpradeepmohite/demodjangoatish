@@ -1,0 +1,2 @@
+[console_scripts]
+mindee-cli = mindee.cli:main

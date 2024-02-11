@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+</head>
+<body>
+{% block content %}
+<h3>List of Pdf Files Scanned</h3>
+<ul>
+    {% for pdf_file in pdf_files %}
+        <li>{{ pdf_file }}</li>
+    {% endfor %}
+</ul>
+<h3>{{ return_message }}</h3>
+<!-- Add any additional display logic or links here -->
+{% if excel_link %}
+    <p><a href="{{ excel_link }}" target="_blank">Download Excel</a></p>
+{% endif %}
+{% endblock %}
+</body>
+</html>

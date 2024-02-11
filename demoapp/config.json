@@ -1,0 +1,7 @@
+{
+    "columns": ["Sr. No", "SURNAME", "GIVEN NAME", "PASSPORT NO.", "SEX", "DATE OF BIRTH",
+      "DATE OF ISSUE", "DATE OF EXPIRY", "PLACE OF ISSUE", "ADDRESS1", "ADDRESS2", "ADDRESS3", "STATUS"],
+    "AZURE_STORAGE_CONNECTION_STRING": "DefaultEndpointsProtocol=https;AccountName=fgbotfilestorage;AccountKey=hHZ804gYXT8SNSX8acki2sdrJVVKAxRS5ooP0IfvlevxRODA+UYBGbsndU/aLHNd7oJn2wN1LIv4aL5M+DKjVA==;EndpointSuffix=core.windows.net",
+    "Mindee_key": "2ec560581b17111b63766ddc1f985371"
+  }
+  

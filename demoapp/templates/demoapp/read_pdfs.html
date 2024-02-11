@@ -1,0 +1,20 @@
+{% load static %}
+
+{% block content %}
+<h2>Enter Azure Blob Storage Details</h2>
+<form method="post" action="{% url 'read_pdfs' %}" onsubmit="showLoader()">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Generate Excel</button>
+</form>
+<div id="loader" style="display: none;">
+    <img src="{% static 'loader.gif' %}" alt="Loading..."></img>
+    <p>Loading...</p>
+</div>
+
+<script>
+    function showLoader() {
+        document.getElementById('loader').style.display = 'block';
+    }
+</script>
+{% endblock %}

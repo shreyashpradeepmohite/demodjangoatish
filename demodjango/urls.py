@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 #for debugtool baar
 from django.conf import settings
-from django.conf.urls import url
+#from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
