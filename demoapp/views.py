@@ -12,8 +12,10 @@ from datetime import datetime
 #import openpyxl
 import json
 
+
 # Load configuration from the JSON file
-with open('.\demoapp\config.json', 'r') as json_file:
+config_path = os.path.join(os.getcwd(), 'demoapp', 'config.json')
+with open(config_path, 'r') as json_file:
     config = json.load(json_file)
 
 columns = config["columns"]
@@ -38,9 +40,9 @@ my_endpoint = mindee_client.create_endpoint(account_name="mindee", endpoint_name
 
 excel_link = None
 
-def read_pdfs(request):
+def read_pdfs(request):  
     global df
-    if request.method == 'POST':
+    if request.method == 'POST':        
         form = UserInputForm(request.POST)
         if form.is_valid():
             user_input = form.cleaned_data
