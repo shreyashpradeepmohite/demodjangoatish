@@ -118,6 +118,8 @@ USE_TZ = True
 
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
+CSRF_COOKIE_DOMAIN = 'azurewebsites.net'
+
 
 
 
@@ -137,3 +139,6 @@ STATICFILES_DIRS = [
 # STATIC_ROOT is the directory where Django will collect static files during deployment.
 # This should not be included in STATICFILES_DIRS.
 STATIC_ROOT = os.path.join(BASE_DIR, 'collected_static')
+
+# Add the following line to configure the default primary key type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
