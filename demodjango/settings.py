@@ -27,7 +27,7 @@ SECRET_KEY = '+g=3l70v^508@gpg22o#d_@5kf5lj8&)_r&x#-u4mm&(p856ht'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://*.azurewebsites.net']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -116,10 +116,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-CSRF_COOKIE_SECURE = True
-CSRF_COOKIE_HTTPONLY = True
-CSRF_COOKIE_DOMAIN = 'https://*.azurewebsites.net'
-CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
+# CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_HTTPONLY = True
+# CSRF_COOKIE_DOMAIN = 'https://*.azurewebsites.net'
+# CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
 
 
 
