@@ -118,8 +118,8 @@ USE_TZ = True
 
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
-CSRF_COOKIE_DOMAIN = 'djangopoc2.azurewebsites.net'
-CSRF_TRUSTED_ORIGINS = ['djangopoc2.azurewebsites.net']
+CSRF_COOKIE_DOMAIN = 'https://*.azurewebsites.net'
+CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
 
 
 
